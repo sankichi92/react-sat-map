@@ -22,15 +22,19 @@
     "lint": "prettier --check ."
   },
   "peerDependencies": {
+    "maplibre-gl": "^4.7.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-map-gl": "^7.1.8"
   },
   "devDependencies": {
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "maplibre-gl": "^4.7.1",
     "prettier": "^3.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-map-gl": "^7.1.8",
     "typescript": "~5.7.2",
     "vite": "^6.0.5"
   },
