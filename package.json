@@ -7,19 +7,22 @@
     "dist",
     "index.d.ts"
   ],
-  "main": "./dist/counter.umd.cjs",
-  "module": "./dist/counter.js",
+  "main": "./dist/react-sat-map.umd.cjs",
+  "module": "./dist/react-sat-map.js",
   "types": "./index.d.ts",
   "exports": {
     "types": "./index.d.ts",
-    "import": "./dist/counter.js",
-    "require": "./dist/counter.umd.cjs"
+    "import": "./dist/react-sat-map.js",
+    "require": "./dist/react-sat-map.umd.cjs"
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "fmt": "prettier --write .",
     "lint": "prettier --check ."
+  },
+  "dependencies": {
+    "satellite.js": "^5.0.0"
   },
   "peerDependencies": {
     "maplibre-gl": "^4.7.1",

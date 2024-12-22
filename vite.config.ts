@@ -4,8 +4,17 @@ export default defineConfig({
   build: {
     lib: {
       entry: "./lib/main.ts",
-      name: "Counter",
-      fileName: "counter",
+      name: "react-sat-map",
+    },
+    rollupOptions: {
+      external: ["react", "react-dom", "react-map-gl/maplibre"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "react-map-gl/maplibre": "ReactMapLibre",
+        },
+      },
     },
   },
 });
