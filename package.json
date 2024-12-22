@@ -12,9 +12,12 @@
   "module": "./dist/react-sat-map.js",
   "types": "./types/main.d.ts",
   "exports": {
-    "types": "./types/main.d.ts",
-    "import": "./dist/react-sat-map.js",
-    "require": "./dist/react-sat-map.umd.cjs"
+    ".": {
+      "types": "./types/main.d.ts",
+      "import": "./dist/react-sat-map.js",
+      "require": "./dist/react-sat-map.umd.cjs"
+    },
+    "./style.css": "./dist/react-sat-map.css"
   },
   "scripts": {
     "dev": "vite",
@@ -34,11 +37,15 @@
   "devDependencies": {
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "autoprefixer": "^10.4.20",
     "maplibre-gl": "^4.7.1",
+    "postcss": "^8.4.49",
     "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-map-gl": "^7.1.8",
+    "tailwindcss": "^3.4.17",
     "typescript": "~5.7.2",
     "vite": "^6.0.5"
   },

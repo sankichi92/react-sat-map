@@ -2,6 +2,7 @@ import { Map } from "react-map-gl/maplibre";
 import { SatelliteMarkers } from "../lib/main";
 
 import "maplibre-gl/dist/maplibre-gl.css";
+import "../lib/main.css";
 
 const satellites = [
   {
