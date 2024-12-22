@@ -24,13 +24,8 @@ export function SatelliteMarkers({
 
   return (
     <>
-      {satellites.map((satellite) => (
-        <SatelliteMarker
-          key={satellite.name}
-          satellite={satellite}
-          date={date}
-          gmst={gmst}
-        >
+      {satellites.map((satellite, i) => (
+        <SatelliteMarker key={i} satellite={satellite} date={date} gmst={gmst}>
           {markerElement}
         </SatelliteMarker>
       ))}
