@@ -1,1 +1,1 @@
-export function setupCounter(element: HTMLButtonElement): void
+export function setupCounter(element: HTMLButtonElement): void;
