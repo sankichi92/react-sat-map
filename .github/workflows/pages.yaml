@@ -1,0 +1,51 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - uses: pnpm/action-setup@v4.0.0
+
+      - uses: actions/setup-node@v4.1.0
+        with:
+          node-version-file: package.json
+          cache: pnpm
+
+      - run: pnpm install
+
+      - name: Fetch TLE data
+        run: curl 'https://celestrak.org/NORAD/elements/gp.php?GROUP=last-30-days&FORMAT=tle' -o src/satellites.txt
+
+      - run: pnpm run build:app
+
+      - uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: app
+
+  deploy:
+    needs: build-app
+
+    permissions:
+      pages: write
+      id-token: write
+
+    concurrency:
+      group: pages
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/deploy-pages@v4.0.5
+        id: deployment

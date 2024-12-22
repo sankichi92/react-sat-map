@@ -22,6 +22,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:app": "vite build --config vite.config.app.js",
     "fmt": "prettier --write .",
     "lint": "prettier --check ."
   },
