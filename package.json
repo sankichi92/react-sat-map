@@ -6,14 +6,14 @@
   "files": [
     "dist",
     "lib",
-    "types"
+    "types/lib"
   ],
   "main": "./dist/react-sat-map.umd.cjs",
   "module": "./dist/react-sat-map.js",
-  "types": "./types/main.d.ts",
+  "types": "./types/lib/main.d.ts",
   "exports": {
     ".": {
-      "types": "./types/main.d.ts",
+      "types": "./types/lib/main.d.ts",
       "import": "./dist/react-sat-map.js",
       "require": "./dist/react-sat-map.umd.cjs"
     },
