@@ -1,13 +1,18 @@
+import type { ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gstime } from "satellite.js";
 import type { Satellite } from "./Satellite";
 import { SatelliteMarker } from "./SatelliteMarker";
 
-type SatelliteMarkersProps = {
+export type SatelliteMarkersProps = {
   satellites: Satellite[];
+  markerElement?: ReactNode;
 };
 
-export function SatelliteMarkers({ satellites }: SatelliteMarkersProps) {
+export function SatelliteMarkers({
+  satellites,
+  markerElement,
+}: SatelliteMarkersProps) {
   const [date, setDate] = useState<Date>(new Date(performance.timeOrigin));
 
   const updateDate = useCallback((timestamp: DOMHighResTimeStamp) => {
@@ -25,7 +30,9 @@ export function SatelliteMarkers({ satellites }: SatelliteMarkersProps) {
           satellite={satellite}
           date={date}
           gmst={gmst}
-        />
+        >
+          {markerElement}
+        </SatelliteMarker>
       ))}
     </>
   );

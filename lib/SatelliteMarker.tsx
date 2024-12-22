@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { useCallback, useMemo, useState } from "react";
 import type { MarkerProps } from "react-map-gl/maplibre";
 import { Marker, Popup } from "react-map-gl/maplibre";
@@ -12,16 +13,18 @@ import {
 } from "satellite.js";
 import type { Satellite } from "./Satellite";
 
-type SatelliteMarkerProps = {
+export type SatelliteMarkerProps = {
   satellite: Satellite;
   date: Date;
   gmst?: GMSTime;
+  children?: ReactNode;
 };
 
 export function SatelliteMarker({
   satellite,
   date = new Date(),
   gmst = gstime(date),
+  children = "🛰️",
 }: SatelliteMarkerProps) {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -54,7 +57,7 @@ export function SatelliteMarker({
         onClick={onSatClick}
         className="satmap-cursor-pointer hover:satmap-text-lg"
       >
-        🛰️
+        {children}
       </Marker>
 
       {showPopup && (
