@@ -1,4 +1,4 @@
-# react-sat-map
+# 🛰️ react-sat-map
 
 React components for visualizing real-time satellite locations on a map.
 
