@@ -1,4 +1,9 @@
-import { Map } from "react-map-gl/maplibre";
+import {
+  FullscreenControl,
+  Map,
+  NavigationControl,
+  ScaleControl,
+} from "react-map-gl/maplibre";
 import { Satellite, SatelliteMarkers } from "../lib/main";
 
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -16,13 +21,19 @@ export default function App() {
   return (
     <Map
       initialViewState={{
-        longitude: 139.78881425,
-        latitude: 35.637313872,
-        zoom: 1.5,
+        longitude: 135,
+        latitude: 35,
+        zoom: 2,
       }}
       style={{ height: "100vh" }}
-      mapStyle="https://tile.openstreetmap.jp/styles/maptiler-basic-ja/style.json"
+      mapStyle="https://tile.openstreetmap.jp/styles/maptiler-basic-en/style.json"
+      touchPitch={false}
+      dragRotate={false}
     >
+      <NavigationControl showCompass={false} />
+      <FullscreenControl />
+      <ScaleControl />
+
       <SatelliteMarkers satellites={satellites} />
     </Map>
   );
