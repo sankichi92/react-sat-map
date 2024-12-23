@@ -1,0 +1,32 @@
+name: Dependabot
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Fetch dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2.2.0
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Enable auto-merge
+        if: |
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          (steps.metadata.outputs.package-ecosystem == 'github_actions' && steps.metadata.outputs.update-type != 'version-update:semver-major')
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
