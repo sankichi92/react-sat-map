@@ -25,7 +25,7 @@ export default function App() {
         latitude: 35,
         zoom: 2,
       }}
-      style={{ height: "100vh" }}
+      style={{ height: "100dvh" }}
       mapStyle="https://tile.openstreetmap.jp/styles/maptiler-basic-en/style.json"
       touchPitch={false}
       dragRotate={false}
