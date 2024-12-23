@@ -1,12 +1,20 @@
 {
   "name": "react-sat-map",
-  "private": true,
-  "version": "0.0.0",
+  "description": "React components for visualizing real-time satellite locations on a map",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankichi92/react-sat-map.git"
+  },
+  "bugs": "https://github.com/sankichi92/react-sat-map/issues",
   "type": "module",
   "files": [
     "dist",
     "lib",
-    "types/lib"
+    "types/lib",
+    "LICENSE",
+    "README.md"
   ],
   "main": "./dist/react-sat-map.umd.cjs",
   "module": "./dist/react-sat-map.js",
@@ -30,10 +38,10 @@
     "satellite.js": "^5.0.0"
   },
   "peerDependencies": {
-    "maplibre-gl": "^4.7.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-map-gl": "^7.1.8"
+    "maplibre-gl": ">=1.13.0",
+    "react": ">=18.3.1",
+    "react-dom": ">=18.3.1",
+    "react-map-gl": ">=7.1.8"
   },
   "devDependencies": {
     "@types/react": "^19.0.2",
