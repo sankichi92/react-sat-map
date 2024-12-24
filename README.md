@@ -47,7 +47,7 @@ const satellites = [
 export default function App() {
   return (
     <Map
-      style={{ height: "100vh" }}
+      style={{ height: "100dvh" }}
       mapStyle="https://demotiles.maplibre.org/style.json"
     >
       <SatelliteMarkers satellites={satellites} />
