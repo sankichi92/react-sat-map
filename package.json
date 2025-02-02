@@ -44,11 +44,10 @@
     "react-map-gl": ">=7.1.8"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.3",
+    "@tailwindcss/vite": "^4.0.3",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "maplibre-gl": "^4.7.1",
-    "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react": "^19.0.0",
