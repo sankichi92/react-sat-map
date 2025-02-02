@@ -69,16 +69,14 @@ export function SatelliteMarker({
           subpixelPositioning={true}
           onClose={() => setShowPopup(false)}
         >
-          <div className="satmap:space-y-1">
-            <h4 className="satmap:m-0 satmap:text-center satmap:font-semibold">
-              {satellite.name}
-            </h4>
-            <ul className="satmap:list-none satmap:p-0 satmap:font-mono">
-              <li>lon: {longitude.toFixed(3)}</li>
-              <li>lat: {latitude.toFixed(3)}</li>
-              <li>alt: {location.height.toFixed(3)} km</li>
-            </ul>
-          </div>
+          <h4 className="satmap:text-center satmap:m-0 satmap:mb-1 satmap:font-semibold">
+            {satellite.name}
+          </h4>
+          <ul className="satmap:list-none satmap:m-0 satmap:p-0 satmap:font-mono">
+            <li>lon: {longitude.toFixed(3)}</li>
+            <li>lat: {latitude.toFixed(3)}</li>
+            <li>alt: {location.height.toFixed(3)} km</li>
+          </ul>
         </Popup>
       )}
     </>
