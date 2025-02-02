@@ -44,7 +44,7 @@
     "react-map-gl": ">=7.1.8"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.3",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "maplibre-gl": "^4.7.1",
@@ -54,7 +54,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-map-gl": "^7.1.8",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^4.0.3",
     "typescript": "~5.7.2",
     "vite": "^6.0.5"
   },
