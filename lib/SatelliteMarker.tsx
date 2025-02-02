@@ -55,7 +55,7 @@ export function SatelliteMarker({
         latitude={latitude}
         subpixelPositioning={true}
         onClick={onSatClick}
-        className="satmap-cursor-pointer hover:satmap-text-lg"
+        className="satmap:cursor-pointer satmap:hover:text-lg"
       >
         {children}
       </Marker>
@@ -69,11 +69,11 @@ export function SatelliteMarker({
           subpixelPositioning={true}
           onClose={() => setShowPopup(false)}
         >
-          <div className="satmap-space-y-1">
-            <h4 className="satmap-m-0 satmap-text-center satmap-font-semibold">
+          <div className="satmap:space-y-1">
+            <h4 className="satmap:m-0 satmap:text-center satmap:font-semibold">
               {satellite.name}
             </h4>
-            <ul className="satmap-list-none satmap-p-0 satmap-font-mono">
+            <ul className="satmap:list-none satmap:p-0 satmap:font-mono">
               <li>lon: {longitude.toFixed(3)}</li>
               <li>lat: {latitude.toFixed(3)}</li>
               <li>alt: {location.height.toFixed(3)} km</li>
