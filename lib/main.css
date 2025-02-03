@@ -1,3 +1,3 @@
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme) prefix(satmap);
-@import "tailwindcss/utilities.css" layer(utilities) prefix(satmap);
+@layer satmap-theme, satmap-utilities;
+@import "tailwindcss/theme.css" layer(satmap-theme) prefix(satmap);
+@import "tailwindcss/utilities.css" layer(satmap-utilities) prefix(satmap);
