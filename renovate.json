@@ -16,5 +16,6 @@
       "automerge": true
     }
   ],
-  "schedule": ["* 20-23 * * 5"]
+  "schedule": ["* 20-23 * * 5"],
+  "labels": ["dependencies"]
 }
