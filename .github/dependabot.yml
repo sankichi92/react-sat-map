@@ -8,6 +8,11 @@ updates:
       day: friday
       time: "20:00"
       timezone: Asia/Tokyo
+    groups:
+      tailwindcss:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
 
   - package-ecosystem: github-actions
     directory: /
