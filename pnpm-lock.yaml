@@ -20,7 +20,7 @@ importers:
         version: 19.0.10
       '@types/react-dom':
         specifier: ^19.0.2
-        version: 19.0.3(@types/react@19.0.10)
+        version: 19.0.4(@types/react@19.0.10)
       maplibre-gl:
         specifier: ^4.7.1
         version: 4.7.1
@@ -430,8 +430,8 @@ packages:
   '@types/pbf@3.0.5':
     resolution: {integrity: sha512-j3pOPiEcWZ34R6a6mN07mUkM4o4Lwf6hPNt8eilOeZhTFbxFXmKhvXl9Y28jotFPaI1bpPDJsbCprUoNke6OrA==}
 
-  '@types/react-dom@19.0.3':
-    resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
+  '@types/react-dom@19.0.4':
+    resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
     peerDependencies:
       '@types/react': ^19.0.0
 
@@ -1116,7 +1116,7 @@ snapshots:
 
   '@types/pbf@3.0.5': {}
 
-  '@types/react-dom@19.0.3(@types/react@19.0.10)':
+  '@types/react-dom@19.0.4(@types/react@19.0.10)':
     dependencies:
       '@types/react': 19.0.10
 
