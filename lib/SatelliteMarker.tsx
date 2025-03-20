@@ -1,7 +1,7 @@
+import type { MarkerProps } from "@vis.gl/react-maplibre";
+import { Marker, Popup } from "@vis.gl/react-maplibre";
 import type { ReactNode } from "react";
 import { useCallback, useMemo, useState } from "react";
-import type { MarkerProps } from "react-map-gl/maplibre";
-import { Marker, Popup } from "react-map-gl/maplibre";
 import type { GMSTime } from "satellite.js";
 import {
   degreesLat,

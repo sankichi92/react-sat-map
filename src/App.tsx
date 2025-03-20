@@ -3,7 +3,7 @@ import {
   Map,
   NavigationControl,
   ScaleControl,
-} from "react-map-gl/maplibre";
+} from "@vis.gl/react-maplibre";
 import { Satellite, SatelliteMarkers } from "../lib/main";
 
 import "maplibre-gl/dist/maplibre-gl.css";
