@@ -9,12 +9,12 @@ export default defineConfig({
       name: "react-sat-map",
     },
     rollupOptions: {
-      external: ["react", "react-dom", "react-map-gl/maplibre"],
+      external: ["react", "react-dom", "@vis.gl/react-maplibre"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
-          "react-map-gl/maplibre": "ReactMapLibre",
+          "@vis.gl/react-maplibre": "ReactMapLibre",
         },
       },
     },
