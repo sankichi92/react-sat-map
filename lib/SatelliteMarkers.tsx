@@ -7,13 +7,13 @@ import { SatelliteMarker } from "./SatelliteMarker";
 export type SatelliteMarkersProps = {
   satellites: Satellite[];
   markerElement?: ReactNode;
-  defaultShowPopup?: boolean;
+  openPopupOnMount?: boolean;
 };
 
 export function SatelliteMarkers({
   satellites,
   markerElement,
-  defaultShowPopup,
+  openPopupOnMount,
 }: SatelliteMarkersProps) {
   const [date, setDate] = useState<Date>(new Date(performance.timeOrigin));
 
@@ -32,7 +32,7 @@ export function SatelliteMarkers({
           satellite={satellite}
           date={date}
           gmst={gmst}
-          defaultShowPopup={defaultShowPopup}
+          openPopupOnMount={openPopupOnMount}
         >
           {markerElement}
         </SatelliteMarker>
