@@ -1,7 +1,8 @@
 import type { MarkerProps } from "@vis.gl/react-maplibre";
-import { Marker, Popup } from "@vis.gl/react-maplibre";
-import type { ReactNode } from "react";
-import { useCallback, useMemo, useState } from "react";
+import { Marker } from "@vis.gl/react-maplibre";
+import { Marker as MarkerInstance, Popup } from "maplibre-gl";
+import { useEffect, useMemo, useRef } from "react";
+import { createPortal } from "react-dom";
 import type { GMSTime } from "satellite.js";
 import {
   degreesLat,
@@ -13,25 +14,26 @@ import {
 } from "satellite.js";
 import type { Satellite } from "./Satellite";
 
-export type SatelliteMarkerProps = {
+export type SatelliteMarkerProps = Omit<
+  MarkerProps,
+  "longitude" | "latitude" | "popup"
+> & {
   satellite: Satellite;
   date: Date;
   gmst?: GMSTime;
-  children?: ReactNode;
+  defaultShowPopup?: boolean;
 };
 
 export function SatelliteMarker({
   satellite,
   date = new Date(),
   gmst = gstime(date),
+  defaultShowPopup = false,
+  subpixelPositioning = true,
   children = "🛰️",
+  ...rest
 }: SatelliteMarkerProps) {
-  const [showPopup, setShowPopup] = useState(false);
-
-  const onSatClick: NonNullable<MarkerProps["onClick"]> = useCallback((e) => {
-    e.originalEvent.stopPropagation();
-    setShowPopup(true);
-  }, []);
+  const markerRef = useRef<MarkerInstance>(null);
 
   const satrec = useMemo(() => {
     return twoline2satrec(satellite.tle.line1, satellite.tle.line2);
@@ -48,27 +50,42 @@ export function SatelliteMarker({
   const longitude = degreesLong(location.longitude);
   const latitude = degreesLat(location.latitude);
 
+  const popupContainer = useMemo(() => document.createElement("div"), []);
+  const popup = useMemo(
+    () =>
+      new Popup({
+        anchor: "right",
+        offset: 10,
+        subpixelPositioning,
+        className: "satmap:opacity-75",
+      }),
+    [subpixelPositioning],
+  );
+
+  useEffect(() => {
+    popup.setDOMContent(popupContainer);
+
+    if (defaultShowPopup && markerRef.current) {
+      markerRef.current.togglePopup();
+    }
+  }, []);
+
   return (
     <>
       <Marker
         longitude={longitude}
         latitude={latitude}
-        subpixelPositioning={true}
-        onClick={onSatClick}
+        subpixelPositioning={subpixelPositioning}
+        popup={popup}
         className="satmap:cursor-pointer satmap:hover:text-lg"
+        ref={markerRef}
+        {...rest}
       >
         {children}
       </Marker>
 
-      {showPopup && (
-        <Popup
-          longitude={longitude}
-          latitude={latitude}
-          offset={[-10, 0]}
-          anchor="right"
-          subpixelPositioning={true}
-          onClose={() => setShowPopup(false)}
-        >
+      {createPortal(
+        <>
           <h4 className="satmap:text-center satmap:m-0 satmap:mb-1 satmap:font-semibold">
             {satellite.name}
           </h4>
@@ -77,7 +94,8 @@ export function SatelliteMarker({
             <li>lat: {latitude.toFixed(3)}</li>
             <li>alt: {location.height.toFixed(3)} km</li>
           </ul>
-        </Popup>
+        </>,
+        popupContainer,
       )}
     </>
   );
