@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.3",
+    "@types/geojson": "^7946.0.16",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "@vis.gl/react-maplibre": "^8.0.1",

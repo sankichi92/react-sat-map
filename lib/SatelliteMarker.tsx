@@ -1,4 +1,7 @@
-import type { MarkerProps } from "@vis.gl/react-maplibre";
+import type {
+  LineLayerSpecification,
+  MarkerProps,
+} from "@vis.gl/react-maplibre";
 import { Marker } from "@vis.gl/react-maplibre";
 import { Marker as MarkerInstance, Popup } from "maplibre-gl";
 import { useEffect, useMemo, useRef } from "react";
@@ -13,6 +16,7 @@ import {
   twoline2satrec,
 } from "satellite.js";
 import type { Satellite } from "./Satellite";
+import { SatelliteOrbit } from "./SatelliteOrbit";
 
 export type SatelliteMarkerProps = Omit<
   MarkerProps,
@@ -22,6 +26,7 @@ export type SatelliteMarkerProps = Omit<
   date: Date;
   gmst?: GMSTime;
   openPopupOnMount?: boolean;
+  orbitPaint?: LineLayerSpecification["paint"];
 };
 
 export function SatelliteMarker({
@@ -29,6 +34,7 @@ export function SatelliteMarker({
   date = new Date(),
   gmst = gstime(date),
   openPopupOnMount = false,
+  orbitPaint = { "line-color": "gray", "line-opacity": 0.75 },
   subpixelPositioning = true,
   children = "🛰️",
   ...rest
@@ -41,9 +47,8 @@ export function SatelliteMarker({
 
   const { position } = propagate(satrec, date);
   if (typeof position === "boolean") {
-    throw new Error(
-      `Propagation failed for ${satellite.name} (${satrec.error})`,
-    );
+    console.error(`Propagation failed for ${satellite.name} (${satrec.error})`);
+    return null;
   }
 
   const location = eciToGeodetic(position, gmst);
@@ -85,6 +90,10 @@ export function SatelliteMarker({
       >
         {children}
       </Marker>
+
+      {popup.isOpen() && (
+        <SatelliteOrbit satrec={satrec} startDate={date} paint={orbitPaint} />
+      )}
 
       {createPortal(
         <>

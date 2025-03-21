@@ -2,18 +2,20 @@ import type { ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gstime } from "satellite.js";
 import type { Satellite } from "./Satellite";
-import { SatelliteMarker } from "./SatelliteMarker";
+import { SatelliteMarker, SatelliteMarkerProps } from "./SatelliteMarker";
 
-export type SatelliteMarkersProps = {
+export type SatelliteMarkersProps = Omit<
+  SatelliteMarkerProps,
+  "satellite" | "date" | "gmst" | "children"
+> & {
   satellites: Satellite[];
   markerElement?: ReactNode;
-  openPopupOnMount?: boolean;
 };
 
 export function SatelliteMarkers({
   satellites,
   markerElement,
-  openPopupOnMount,
+  ...rest
 }: SatelliteMarkersProps) {
   const [date, setDate] = useState<Date>(new Date(performance.timeOrigin));
 
@@ -32,7 +34,7 @@ export function SatelliteMarkers({
           satellite={satellite}
           date={date}
           gmst={gmst}
-          openPopupOnMount={openPopupOnMount}
+          {...rest}
         >
           {markerElement}
         </SatelliteMarker>
