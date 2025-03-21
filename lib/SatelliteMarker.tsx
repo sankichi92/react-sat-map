@@ -1,7 +1,7 @@
 import type { MarkerProps } from "@vis.gl/react-maplibre";
 import { Marker } from "@vis.gl/react-maplibre";
-import { Popup } from "maplibre-gl";
-import { useMemo } from "react";
+import { Marker as MarkerInstance, Popup } from "maplibre-gl";
+import { useEffect, useMemo, useRef } from "react";
 import type { GMSTime } from "satellite.js";
 import {
   degreesLat,
@@ -20,17 +20,21 @@ export type SatelliteMarkerProps = Omit<
   satellite: Satellite;
   date: Date;
   gmst?: GMSTime;
+  defaultShowPopup?: boolean;
 };
 
 export function SatelliteMarker({
   satellite,
   date = new Date(),
   gmst = gstime(date),
-  subpixelPositioning = true,
+  defaultShowPopup = false,
   popup,
+  subpixelPositioning = true,
   children = "🛰️",
   ...rest
 }: SatelliteMarkerProps) {
+  const markerRef = useRef<MarkerInstance>(null);
+
   const satrec = useMemo(() => {
     return twoline2satrec(satellite.tle.line1, satellite.tle.line2);
   }, [satellite]);
@@ -48,7 +52,13 @@ export function SatelliteMarker({
 
   if (!popup) {
     popup = useMemo(
-      () => new Popup({ anchor: "right", offset: 10, subpixelPositioning }),
+      () =>
+        new Popup({
+          anchor: "right",
+          offset: 10,
+          subpixelPositioning,
+          className: "satmap:opacity-75",
+        }),
       [subpixelPositioning],
     );
     if (popup.isOpen()) {
@@ -63,6 +73,14 @@ export function SatelliteMarker({
     }
   }
 
+  if (defaultShowPopup) {
+    useEffect(() => {
+      if (markerRef.current) {
+        markerRef.current.togglePopup();
+      }
+    }, []);
+  }
+
   return (
     <Marker
       longitude={longitude}
@@ -70,6 +88,7 @@ export function SatelliteMarker({
       subpixelPositioning={subpixelPositioning}
       popup={popup}
       className="satmap:cursor-pointer satmap:hover:text-lg"
+      ref={markerRef}
       {...rest}
     >
       {children}
