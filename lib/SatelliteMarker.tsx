@@ -15,7 +15,7 @@ import type { Satellite } from "./Satellite";
 
 export type SatelliteMarkerProps = Omit<
   MarkerProps,
-  "longitude" | "latitude"
+  "longitude" | "latitude" | "popup"
 > & {
   satellite: Satellite;
   date: Date;
@@ -28,7 +28,6 @@ export function SatelliteMarker({
   date = new Date(),
   gmst = gstime(date),
   defaultShowPopup = false,
-  popup,
   subpixelPositioning = true,
   children = "🛰️",
   ...rest
@@ -50,27 +49,26 @@ export function SatelliteMarker({
   const longitude = degreesLong(location.longitude);
   const latitude = degreesLat(location.latitude);
 
-  if (!popup) {
-    popup = useMemo(
-      () =>
-        new Popup({
-          anchor: "right",
-          offset: 10,
-          subpixelPositioning,
-          className: "satmap:opacity-75",
-        }),
-      [subpixelPositioning],
+  const popup = useMemo(
+    () =>
+      new Popup({
+        anchor: "right",
+        offset: 10,
+        subpixelPositioning,
+        className: "satmap:opacity-75",
+      }),
+    [subpixelPositioning],
+  );
+
+  if (popup.isOpen()) {
+    popup.setHTML(
+      `<h4 class="satmap:text-center satmap:m-0 satmap:mb-1 satmap:font-semibold">${satellite.name}</h4>` +
+        `<ul class="satmap:list-none satmap:m-0 satmap:p-0 satmap:font-mono">` +
+        `<li>lon: ${longitude.toFixed(3)}</li>` +
+        `<li>lat: ${latitude.toFixed(3)}</li>` +
+        `<li>alt: ${location.height.toFixed(3)} km</li>` +
+        `</ul>`,
     );
-    if (popup.isOpen()) {
-      popup.setHTML(
-        `<h4 class="satmap:text-center satmap:m-0 satmap:mb-1 satmap:font-semibold">${satellite.name}</h4>` +
-          `<ul class="satmap:list-none satmap:m-0 satmap:p-0 satmap:font-mono">` +
-          `<li>lon: ${longitude.toFixed(3)}</li>` +
-          `<li>lat: ${latitude.toFixed(3)}</li>` +
-          `<li>alt: ${location.height.toFixed(3)} km</li>` +
-          `</ul>`,
-      );
-    }
   }
 
   if (defaultShowPopup) {
