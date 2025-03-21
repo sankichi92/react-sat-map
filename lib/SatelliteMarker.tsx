@@ -2,6 +2,7 @@ import type { MarkerProps } from "@vis.gl/react-maplibre";
 import { Marker } from "@vis.gl/react-maplibre";
 import { Marker as MarkerInstance, Popup } from "maplibre-gl";
 import { useEffect, useMemo, useRef } from "react";
+import { createPortal } from "react-dom";
 import type { GMSTime } from "satellite.js";
 import {
   degreesLat,
@@ -49,6 +50,7 @@ export function SatelliteMarker({
   const longitude = degreesLong(location.longitude);
   const latitude = degreesLat(location.latitude);
 
+  const popupContainer = useMemo(() => document.createElement("div"), []);
   const popup = useMemo(
     () =>
       new Popup({
@@ -60,36 +62,41 @@ export function SatelliteMarker({
     [subpixelPositioning],
   );
 
-  if (popup.isOpen()) {
-    popup.setHTML(
-      `<h4 class="satmap:text-center satmap:m-0 satmap:mb-1 satmap:font-semibold">${satellite.name}</h4>` +
-        `<ul class="satmap:list-none satmap:m-0 satmap:p-0 satmap:font-mono">` +
-        `<li>lon: ${longitude.toFixed(3)}</li>` +
-        `<li>lat: ${latitude.toFixed(3)}</li>` +
-        `<li>alt: ${location.height.toFixed(3)} km</li>` +
-        `</ul>`,
-    );
-  }
+  useEffect(() => {
+    popup.setDOMContent(popupContainer);
 
-  if (defaultShowPopup) {
-    useEffect(() => {
-      if (markerRef.current) {
-        markerRef.current.togglePopup();
-      }
-    }, []);
-  }
+    if (defaultShowPopup && markerRef.current) {
+      markerRef.current.togglePopup();
+    }
+  }, []);
 
   return (
-    <Marker
-      longitude={longitude}
-      latitude={latitude}
-      subpixelPositioning={subpixelPositioning}
-      popup={popup}
-      className="satmap:cursor-pointer satmap:hover:text-lg"
-      ref={markerRef}
-      {...rest}
-    >
-      {children}
-    </Marker>
+    <>
+      <Marker
+        longitude={longitude}
+        latitude={latitude}
+        subpixelPositioning={subpixelPositioning}
+        popup={popup}
+        className="satmap:cursor-pointer satmap:hover:text-lg"
+        ref={markerRef}
+        {...rest}
+      >
+        {children}
+      </Marker>
+
+      {createPortal(
+        <>
+          <h4 className="satmap:text-center satmap:m-0 satmap:mb-1 satmap:font-semibold">
+            {satellite.name}
+          </h4>
+          <ul className="satmap:list-none satmap:m-0 satmap:p-0 satmap:font-mono">
+            <li>lon: {longitude.toFixed(3)}</li>
+            <li>lat: {latitude.toFixed(3)}</li>
+            <li>alt: {location.height.toFixed(3)} km</li>
+          </ul>
+        </>,
+        popupContainer,
+      )}
+    </>
   );
 }
