@@ -21,14 +21,14 @@ export type SatelliteMarkerProps = Omit<
   satellite: Satellite;
   date: Date;
   gmst?: GMSTime;
-  defaultShowPopup?: boolean;
+  openPopupOnMount?: boolean;
 };
 
 export function SatelliteMarker({
   satellite,
   date = new Date(),
   gmst = gstime(date),
-  defaultShowPopup = false,
+  openPopupOnMount = false,
   subpixelPositioning = true,
   children = "🛰️",
   ...rest
@@ -64,9 +64,11 @@ export function SatelliteMarker({
 
   useEffect(() => {
     popup.setDOMContent(popupContainer);
+  }, [popup, popupContainer]);
 
-    if (defaultShowPopup && markerRef.current) {
-      markerRef.current.togglePopup();
+  useEffect(() => {
+    if (openPopupOnMount) {
+      markerRef.current?.togglePopup();
     }
   }, []);
 
@@ -75,8 +77,8 @@ export function SatelliteMarker({
       <Marker
         longitude={longitude}
         latitude={latitude}
-        subpixelPositioning={subpixelPositioning}
         popup={popup}
+        subpixelPositioning={subpixelPositioning}
         className="satmap:cursor-pointer satmap:hover:text-lg"
         ref={markerRef}
         {...rest}
