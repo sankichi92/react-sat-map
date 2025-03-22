@@ -1,6 +1,7 @@
 import type { LineLayerSpecification } from "@vis.gl/react-maplibre";
 import { Layer, Source } from "@vis.gl/react-maplibre";
 import type { LineString } from "geojson";
+import { useMemo, useRef } from "react";
 import type { SatRec } from "satellite.js";
 import {
   degreesLat,
@@ -15,28 +16,47 @@ export type SatelliteOrbitProps = Omit<
   "id" | "type" | "source" | "source-layer"
 > & {
   satrec: SatRec;
-  startDate: Date;
+  date: Date;
   steps?: number;
+};
+
+type SatelliteOrbitCache = {
+  startDate: Date;
+  stepMilliseconds: number;
+  coordinates: [number, number][];
 };
 
 export function SatelliteOrbit({
   satrec,
-  startDate,
+  date,
   steps = 360,
   ...rest
 }: SatelliteOrbitProps) {
-  const orbitMinutes = (2 * Math.PI) / satrec.no;
-  const stepMilliseconds = (orbitMinutes / steps) * 60 * 1000;
+  const cacheRef = useRef<SatelliteOrbitCache>(null);
 
-  const initialLocation = getSatelliteLocation(satrec, startDate);
-  if (!initialLocation) {
-    return null;
+  const stepMilliseconds = useMemo(() => {
+    const orbitMinutes = (2 * Math.PI) / satrec.no;
+    return (orbitMinutes / steps) * 60 * 1000;
+  }, [satrec, steps]);
+
+  const { startDate, coordinates } = getCachedCoordinates(
+    cacheRef.current,
+    date,
+    stepMilliseconds,
+  );
+
+  if (coordinates.length === 0) {
+    const initialLocation = getSatelliteLocation(satrec, startDate);
+    if (!initialLocation) {
+      return null;
+    }
+    coordinates.push(initialLocation);
   }
 
-  const coordinates = [initialLocation];
-  let [prevLongitude, _] = initialLocation;
-  let meridianCrossings = 0;
-  for (let i = 1; i < steps; i++) {
+  const [lastLongitude, _] = coordinates[coordinates.length - 1];
+  let meridianCrossings = Math.trunc(lastLongitude / 360);
+  let prevLongitude = lastLongitude % 360;
+  for (let i = coordinates.length; i < steps; i++) {
     const date = new Date(startDate.getTime() + i * stepMilliseconds);
 
     const location = getSatelliteLocation(satrec, date);
@@ -56,6 +76,12 @@ export function SatelliteOrbit({
     coordinates.push([longitude, latitude]);
   }
 
+  cacheRef.current = {
+    startDate,
+    stepMilliseconds,
+    coordinates,
+  };
+
   const geojson = {
     type: "LineString",
     coordinates,
@@ -66,6 +92,25 @@ export function SatelliteOrbit({
       <Layer type="line" {...rest} />
     </Source>
   );
+}
+
+function getCachedCoordinates(
+  cache: SatelliteOrbitCache | null,
+  date: Date,
+  stepMilliseconds: number,
+) {
+  if (cache && stepMilliseconds === cache.stepMilliseconds) {
+    const timeDiff = date.getTime() - cache.startDate.getTime();
+    const stepsToShift = Math.floor(timeDiff / stepMilliseconds);
+    if (stepsToShift >= 0 && stepsToShift < cache.coordinates.length) {
+      const startDate = new Date(
+        cache.startDate.getTime() + stepsToShift * stepMilliseconds,
+      );
+      const coordinates = cache.coordinates.slice(stepsToShift);
+      return { startDate, coordinates };
+    }
+  }
+  return { startDate: date, coordinates: [] };
 }
 
 function getSatelliteLocation(satrec: SatRec, date: Date) {
@@ -79,5 +124,5 @@ function getSatelliteLocation(satrec: SatRec, date: Date) {
   const longitude = degreesLong(location.longitude);
   const latitude = degreesLat(location.latitude);
 
-  return [longitude, latitude];
+  return [longitude, latitude] as [number, number];
 }

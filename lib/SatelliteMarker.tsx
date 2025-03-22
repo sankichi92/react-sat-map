@@ -92,7 +92,7 @@ export function SatelliteMarker({
       </Marker>
 
       {popup.isOpen() && (
-        <SatelliteOrbit satrec={satrec} startDate={date} paint={orbitPaint} />
+        <SatelliteOrbit satrec={satrec} date={date} paint={orbitPaint} />
       )}
 
       {createPortal(
