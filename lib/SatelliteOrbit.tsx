@@ -99,18 +99,21 @@ function getCachedCoordinates(
   date: Date,
   stepMilliseconds: number,
 ) {
-  if (cache && stepMilliseconds === cache.stepMilliseconds) {
-    const timeDiff = date.getTime() - cache.startDate.getTime();
-    const stepsToShift = Math.floor(timeDiff / stepMilliseconds);
-    if (stepsToShift >= 0 && stepsToShift < cache.coordinates.length) {
-      const startDate = new Date(
-        cache.startDate.getTime() + stepsToShift * stepMilliseconds,
-      );
-      const coordinates = cache.coordinates.slice(stepsToShift);
-      return { startDate, coordinates };
-    }
+  if (!cache || stepMilliseconds !== cache.stepMilliseconds) {
+    return { startDate: date, coordinates: [] };
   }
-  return { startDate: date, coordinates: [] };
+
+  const timeDiff = date.getTime() - cache.startDate.getTime();
+  const stepsToShift = Math.floor(timeDiff / stepMilliseconds);
+  if (stepsToShift < 0 || stepsToShift >= cache.coordinates.length) {
+    return { startDate: date, coordinates: [] };
+  }
+
+  const startDate = new Date(
+    cache.startDate.getTime() + stepsToShift * stepMilliseconds,
+  );
+  const coordinates = cache.coordinates.slice(stepsToShift);
+  return { startDate, coordinates };
 }
 
 function getSatelliteLocation(satrec: SatRec, date: Date) {
