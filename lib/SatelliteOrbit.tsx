@@ -57,9 +57,9 @@ export function SatelliteOrbit({
   let meridianCrossings = Math.trunc(lastLongitude / 360);
   let prevLongitude = lastLongitude % 360;
   for (let i = coordinates.length; i < steps; i++) {
-    const date = new Date(startDate.getTime() + i * stepMilliseconds);
+    const stepDate = new Date(startDate.getTime() + i * stepMilliseconds);
 
-    const location = getSatelliteLocation(satrec, date);
+    const location = getSatelliteLocation(satrec, stepDate);
     if (!location) {
       break;
     }
