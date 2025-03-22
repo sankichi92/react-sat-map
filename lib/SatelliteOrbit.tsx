@@ -53,9 +53,6 @@ export function SatelliteOrbit({
     coordinates.push(initialLocation);
   }
 
-  const [lastLongitude, _] = coordinates[coordinates.length - 1];
-  let meridianCrossings = Math.trunc(lastLongitude / 360);
-  let prevLongitude = lastLongitude % 360;
   for (let i = coordinates.length; i < steps; i++) {
     const stepDate = new Date(startDate.getTime() + i * stepMilliseconds);
 
@@ -64,16 +61,13 @@ export function SatelliteOrbit({
       break;
     }
 
-    let [longitude, latitude] = location;
-    if (longitude - prevLongitude > 180) {
-      meridianCrossings -= 1;
-    } else if (longitude - prevLongitude < -180) {
-      meridianCrossings += 1;
-    }
-    prevLongitude = longitude;
-    longitude += meridianCrossings * 360;
+    const [longitude, latitude] = location;
+    const normalizedLongitude = normalizeLongitude(
+      longitude,
+      coordinates[coordinates.length - 1][0],
+    );
 
-    coordinates.push([longitude, latitude]);
+    coordinates.push([normalizedLongitude, latitude]);
   }
 
   cacheRef.current = {
@@ -99,18 +93,21 @@ function getCachedCoordinates(
   date: Date,
   stepMilliseconds: number,
 ) {
-  if (cache && stepMilliseconds === cache.stepMilliseconds) {
-    const timeDiff = date.getTime() - cache.startDate.getTime();
-    const stepsToShift = Math.floor(timeDiff / stepMilliseconds);
-    if (stepsToShift >= 0 && stepsToShift < cache.coordinates.length) {
-      const startDate = new Date(
-        cache.startDate.getTime() + stepsToShift * stepMilliseconds,
-      );
-      const coordinates = cache.coordinates.slice(stepsToShift);
-      return { startDate, coordinates };
-    }
+  if (!cache || stepMilliseconds !== cache.stepMilliseconds) {
+    return { startDate: date, coordinates: [] };
   }
-  return { startDate: date, coordinates: [] };
+
+  const timeDiff = date.getTime() - cache.startDate.getTime();
+  const stepsToShift = Math.floor(timeDiff / stepMilliseconds);
+  if (stepsToShift < 0 || stepsToShift >= cache.coordinates.length) {
+    return { startDate: date, coordinates: [] };
+  }
+
+  const startDate = new Date(
+    cache.startDate.getTime() + stepsToShift * stepMilliseconds,
+  );
+  const coordinates = cache.coordinates.slice(stepsToShift);
+  return { startDate, coordinates };
 }
 
 function getSatelliteLocation(satrec: SatRec, date: Date) {
@@ -125,4 +122,14 @@ function getSatelliteLocation(satrec: SatRec, date: Date) {
   const latitude = degreesLat(location.latitude);
 
   return [longitude, latitude] as [number, number];
+}
+
+function normalizeLongitude(longitude: number, lastLongitude: number) {
+  let normalized = longitude + Math.trunc(lastLongitude / 360) * 360;
+  if (normalized - lastLongitude > 180) {
+    normalized -= 360;
+  } else if (normalized - lastLongitude < -180) {
+    normalized += 360;
+  }
+  return normalized;
 }
