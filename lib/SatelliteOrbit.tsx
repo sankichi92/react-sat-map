@@ -53,9 +53,6 @@ export function SatelliteOrbit({
     coordinates.push(initialLocation);
   }
 
-  const [lastLongitude, _] = coordinates[coordinates.length - 1];
-  let meridianCrossings = Math.trunc(lastLongitude / 360);
-  let prevLongitude = lastLongitude % 360;
   for (let i = coordinates.length; i < steps; i++) {
     const stepDate = new Date(startDate.getTime() + i * stepMilliseconds);
 
@@ -64,16 +61,13 @@ export function SatelliteOrbit({
       break;
     }
 
-    let [longitude, latitude] = location;
-    if (longitude - prevLongitude > 180) {
-      meridianCrossings -= 1;
-    } else if (longitude - prevLongitude < -180) {
-      meridianCrossings += 1;
-    }
-    prevLongitude = longitude;
-    longitude += meridianCrossings * 360;
+    const [longitude, latitude] = location;
+    const normalizedLongitude = normalizeLongitude(
+      longitude,
+      coordinates[coordinates.length - 1][0],
+    );
 
-    coordinates.push([longitude, latitude]);
+    coordinates.push([normalizedLongitude, latitude]);
   }
 
   cacheRef.current = {
@@ -128,4 +122,14 @@ function getSatelliteLocation(satrec: SatRec, date: Date) {
   const latitude = degreesLat(location.latitude);
 
   return [longitude, latitude] as [number, number];
+}
+
+function normalizeLongitude(longitude: number, lastLongitude: number) {
+  let normalized = longitude + Math.trunc(lastLongitude / 360) * 360;
+  if (normalized - lastLongitude > 180) {
+    normalized -= 360;
+  } else if (normalized - lastLongitude < -180) {
+    normalized += 360;
+  }
+  return normalized;
 }
