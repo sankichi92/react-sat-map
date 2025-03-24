@@ -1,7 +1,7 @@
 {
   "name": "react-sat-map",
   "description": "React components for visualizing real-time satellite locations on a map",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "repository": {
     "type": "git",
