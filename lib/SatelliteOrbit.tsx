@@ -107,7 +107,26 @@ function getCachedCoordinates(
     cache.startDate.getTime() + stepsToShift * stepMilliseconds,
   );
   const coordinates = cache.coordinates.slice(stepsToShift);
-  return { startDate, coordinates };
+
+  if (coordinates[coordinates.length - 1][0] >= 360) {
+    return {
+      startDate,
+      coordinates: coordinates.map(
+        ([longitude, latitude]) =>
+          [longitude - 360, latitude] as [number, number],
+      ),
+    };
+  } else if (coordinates[coordinates.length - 1][0] <= -360) {
+    return {
+      startDate,
+      coordinates: coordinates.map(
+        ([longitude, latitude]) =>
+          [longitude + 360, latitude] as [number, number],
+      ),
+    };
+  } else {
+    return { startDate, coordinates };
+  }
 }
 
 function getSatelliteLocation(satrec: SatRec, date: Date) {
@@ -125,11 +144,11 @@ function getSatelliteLocation(satrec: SatRec, date: Date) {
 }
 
 function normalizeLongitude(longitude: number, lastLongitude: number) {
-  let normalized = longitude + Math.trunc(lastLongitude / 360) * 360;
-  if (normalized - lastLongitude > 180) {
-    normalized -= 360;
-  } else if (normalized - lastLongitude < -180) {
-    normalized += 360;
+  if (longitude - lastLongitude > 180) {
+    return longitude - 360;
+  } else if (longitude - lastLongitude < -180) {
+    return longitude + 360;
+  } else {
+    return longitude;
   }
-  return normalized;
 }
