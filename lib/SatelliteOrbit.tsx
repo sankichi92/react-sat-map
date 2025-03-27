@@ -62,12 +62,12 @@ export function SatelliteOrbit({
     }
 
     const [longitude, latitude] = location;
-    const normalizedLongitude = normalizeLongitude(
+    const adjustedLongitude = adjustLongitude(
       longitude,
       coordinates[coordinates.length - 1][0],
     );
 
-    coordinates.push([normalizedLongitude, latitude]);
+    coordinates.push([adjustedLongitude, latitude]);
   }
 
   cacheRef.current = {
@@ -143,12 +143,12 @@ function getSatelliteLocation(satrec: SatRec, date: Date) {
   return [longitude, latitude] as [number, number];
 }
 
-function normalizeLongitude(longitude: number, lastLongitude: number) {
-  if (longitude - lastLongitude > 180) {
-    return longitude - 360;
-  } else if (longitude - lastLongitude < -180) {
-    return longitude + 360;
-  } else {
-    return longitude;
+function adjustLongitude(longitude: number, prevLongitude: number) {
+  let adjusted = longitude + Math.trunc(prevLongitude / 360) * 360;
+  if (adjusted - prevLongitude > 180) {
+    adjusted -= 360;
+  } else if (adjusted - prevLongitude < -180) {
+    adjusted += 360;
   }
+  return adjusted;
 }
