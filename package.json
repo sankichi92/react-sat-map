@@ -35,7 +35,7 @@
     "lint": "prettier --check ."
   },
   "dependencies": {
-    "satellite.js": "^5.0.0"
+    "satellite.js": "^6.0.0"
   },
   "peerDependencies": {
     "@vis.gl/react-maplibre": ">=8.0.0",
