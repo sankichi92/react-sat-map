@@ -45,11 +45,12 @@ export function SatelliteMarker({
     return twoline2satrec(satellite.tle.line1, satellite.tle.line2);
   }, [satellite]);
 
-  const { position } = propagate(satrec, date);
-  if (typeof position === "boolean") {
+  const result = propagate(satrec, date);
+  if (!result) {
     console.error(`Propagation failed for ${satellite.name} (${satrec.error})`);
     return null;
   }
+  const { position } = result;
 
   const location = eciToGeodetic(position, gmst);
   const longitude = degreesLong(location.longitude);
