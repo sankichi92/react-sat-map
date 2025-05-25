@@ -130,10 +130,11 @@ function getCachedCoordinates(
 }
 
 function getSatelliteLocation(satrec: SatRec, date: Date) {
-  const { position } = propagate(satrec, date);
-  if (typeof position === "boolean") {
+  const result = propagate(satrec, date);
+  if (!result) {
     return null;
   }
+  const { position } = result;
 
   const gmst = gstime(date);
   const location = eciToGeodetic(position, gmst);
