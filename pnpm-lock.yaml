@@ -23,7 +23,7 @@ importers:
         version: 19.1.12
       '@types/react-dom':
         specifier: ^19.0.2
-        version: 19.1.7(@types/react@19.1.12)
+        version: 19.1.9(@types/react@19.1.12)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
         version: 8.0.4(maplibre-gl@5.6.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -458,8 +458,8 @@ packages:
   '@types/geojson@7946.0.16':
     resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
 
-  '@types/react-dom@19.1.7':
-    resolution: {integrity: sha512-i5ZzwYpqjmrKenzkoLM2Ibzt6mAsM7pxB6BCIouEVVmgiqaMj1TjaK7hnA36hbW5aZv20kx7Lw6hWzPWg0Rurw==}
+  '@types/react-dom@19.1.9':
+    resolution: {integrity: sha512-qXRuZaOsAdXKFyOhRBg6Lqqc0yay13vN7KrIg4L7N4aaHN68ma9OK3NE1BoDFgFOTfM7zg+3/8+2n8rLUH3OKQ==}
     peerDependencies:
       '@types/react': ^19.0.0
 
@@ -1192,7 +1192,7 @@ snapshots:
 
   '@types/geojson@7946.0.16': {}
 
-  '@types/react-dom@19.1.7(@types/react@19.1.12)':
+  '@types/react-dom@19.1.9(@types/react@19.1.12)':
     dependencies:
       '@types/react': 19.1.12
 
