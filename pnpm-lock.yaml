@@ -14,7 +14,7 @@ importers:
     devDependencies:
       '@tailwindcss/vite':
         specifier: ^4.0.3
-        version: 4.1.16(vite@7.1.11(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1))
+        version: 4.1.16(vite@7.1.12(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1))
       '@types/geojson':
         specifier: ^7946.0.16
         version: 7946.0.16
@@ -50,7 +50,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.1.5
-        version: 7.1.11(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1)
+        version: 7.1.12(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1)
 
 packages:
 
@@ -846,8 +846,8 @@ packages:
     resolution: {integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==}
     engines: {node: '>=0.10.0'}
 
-  vite@7.1.11:
-    resolution: {integrity: sha512-uzcxnSDVjAopEUjljkWh8EIrg6tlzrjFUfMcR1EVsRDGwf/ccef0qQPRyOrROwhrTDaApueq+ja+KLPlzR/zdg==}
+  vite@7.1.12:
+    resolution: {integrity: sha512-ZWyE8YXEXqJrrSLvYgrRP7p62OziLW7xI5HYGWFzOvupfAlrLvURSzv/FyGyy0eidogEM3ujU+kUG1zuHgb6Ug==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -1167,12 +1167,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.16
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.16
 
-  '@tailwindcss/vite@4.1.16(vite@7.1.11(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1))':
+  '@tailwindcss/vite@4.1.16(vite@7.1.12(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1))':
     dependencies:
       '@tailwindcss/node': 4.1.16
       '@tailwindcss/oxide': 4.1.16
       tailwindcss: 4.1.16
-      vite: 7.1.11(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1)
+      vite: 7.1.12(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1)
 
   '@types/estree@1.0.8': {}
 
@@ -1512,7 +1512,7 @@ snapshots:
       is-extendable: 0.1.1
       set-value: 2.0.1
 
-  vite@7.1.11(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1):
+  vite@7.1.12(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.6.1):
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
