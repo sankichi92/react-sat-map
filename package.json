@@ -34,6 +34,16 @@
     "fmt": "prettier --write .",
     "lint": "prettier --check ."
   },
+  "engines": {
+    "node": ">=22"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.11.0",
+      "onFail": "download"
+    }
+  },
   "dependencies": {
     "satellite.js": "^6.0.0"
   },
@@ -64,8 +74,5 @@
       "@tailwindcss/oxide",
       "esbuild"
     ]
-  },
-  "volta": {
-    "node": "24.11.0"
   }
 }
