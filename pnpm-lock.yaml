@@ -26,10 +26,10 @@ importers:
         version: 19.2.3(@types/react@19.2.6)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
-        version: 8.1.0(maplibre-gl@5.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 8.1.0(maplibre-gl@5.13.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       maplibre-gl:
         specifier: ^5.2.0
-        version: 5.12.0
+        version: 5.13.0
       node:
         specifier: runtime:^24.11.0
         version: runtime:24.11.1
@@ -671,8 +671,8 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  maplibre-gl@5.12.0:
-    resolution: {integrity: sha512-2B/H+DpjDO2NzsvNQYVIuKPyijhYJW/Hk3W+6BloAzXhm6nqXC3gVrntPPgP6hRH8f8j23nbNLOtM6OKplHwRQ==}
+  maplibre-gl@5.13.0:
+    resolution: {integrity: sha512-UsIVP34rZdM4TjrjhwBAhbC3HT7AzFx9p/draiAPlLr8/THozZF6WmJnZ9ck4q94uO55z7P7zoGCh+AZVoagsQ==}
     engines: {node: '>=16.14.0', npm: '>=8.1.0'}
 
   minimist@1.2.8:
@@ -1294,13 +1294,13 @@ snapshots:
     dependencies:
       '@types/geojson': 7946.0.16
 
-  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.12.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.13.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
     optionalDependencies:
-      maplibre-gl: 5.12.0
+      maplibre-gl: 5.13.0
 
   arr-union@3.1.0: {}
 
@@ -1454,7 +1454,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  maplibre-gl@5.12.0:
+  maplibre-gl@5.13.0:
     dependencies:
       '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/jsonlint-lines-primitives': 2.0.2
