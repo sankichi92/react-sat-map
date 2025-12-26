@@ -26,7 +26,7 @@ importers:
         version: 19.2.3(@types/react@19.2.7)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
-        version: 8.1.0(maplibre-gl@5.14.0)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)
+        version: 8.1.0(maplibre-gl@5.14.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       maplibre-gl:
         specifier: ^5.2.0
         version: 5.14.0
@@ -44,7 +44,7 @@ importers:
         version: 19.2.3
       react-dom:
         specifier: ^19.0.0
-        version: 19.2.1(react@19.2.3)
+        version: 19.2.3(react@19.2.3)
       tailwindcss:
         specifier: ^4.0.3
         version: 4.1.18
@@ -860,10 +860,10 @@ packages:
   quickselect@3.0.0:
     resolution: {integrity: sha512-XdjUArbK4Bm5fLLvlm5KpTFOiOThgfWWI4axAZDWg4E/0mKdZyI9tNEfds27qCi1ze/vwTR16kvmmGhRra3c2g==}
 
-  react-dom@19.2.1:
-    resolution: {integrity: sha512-ibrK8llX2a4eOskq1mXKu/TGZj9qzomO+sNfO98M6d9zIPOEhlBkMkBUBLd1vgS0gQsLDBzA+8jJBVXDnfHmJg==}
+  react-dom@19.2.3:
+    resolution: {integrity: sha512-yELu4WmLPw5Mr/lmeEpox5rw3RETacE++JgHqQzd2dg+YbJuat3jH4ingc+WPZhxaoFzdv9y33G+F7Nl5O0GBg==}
     peerDependencies:
-      react: ^19.2.1
+      react: ^19.2.3
 
   react@19.2.3:
     resolution: {integrity: sha512-Ku/hhYbVjOQnXDZFv2+RibmLFGwFdeeKHFcOTlrt7xplBnya5OGn/hIRDsqDiSUcfORsDC7MPxwork8jBwsIWA==}
@@ -1294,11 +1294,11 @@ snapshots:
     dependencies:
       '@types/geojson': 7946.0.16
 
-  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.14.0)(react-dom@19.2.1(react@19.2.3))(react@19.2.3)':
+  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.14.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
       react: 19.2.3
-      react-dom: 19.2.1(react@19.2.3)
+      react-dom: 19.2.3(react@19.2.3)
     optionalDependencies:
       maplibre-gl: 5.14.0
 
@@ -1514,7 +1514,7 @@ snapshots:
 
   quickselect@3.0.0: {}
 
-  react-dom@19.2.1(react@19.2.3):
+  react-dom@19.2.3(react@19.2.3):
     dependencies:
       react: 19.2.3
       scheduler: 0.27.0
