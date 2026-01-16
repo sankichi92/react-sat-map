@@ -26,13 +26,13 @@ importers:
         version: 19.2.3(@types/react@19.2.7)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
-        version: 8.1.0(maplibre-gl@5.15.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: 8.1.0(maplibre-gl@5.16.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       maplibre-gl:
         specifier: ^5.2.0
-        version: 5.15.0
+        version: 5.16.0
       node:
         specifier: runtime:^24.11.0
-        version: runtime:24.12.0
+        version: runtime:24.13.0
       prettier:
         specifier: ^3.4.2
         version: 3.7.4
@@ -671,8 +671,8 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  maplibre-gl@5.15.0:
-    resolution: {integrity: sha512-pPeu/t4yPDX/+Uf9ibLUdmaKbNMlGxMAX+tBednYukol2qNk2TZXAlhdohWxjVvTO3is8crrUYv3Ok02oAaKzA==}
+  maplibre-gl@5.16.0:
+    resolution: {integrity: sha512-/VDY89nr4jgLJyzmhy325cG6VUI02WkZ/UfVuDbG/piXzo6ODnM+omDFIwWY8tsEsBG26DNDmNMn3Y2ikHsBiA==}
     engines: {node: '>=16.14.0', npm: '>=8.1.0'}
 
   minimist@1.2.8:
@@ -686,94 +686,94 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  node@runtime:24.12.0:
+  node@runtime:24.13.0:
     resolution:
       type: variations
       variants:
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-MfPQZbuE8GnlIuVdDTA1vTZMul2KIiM/9oAF0oHou3g=
+            integrity: sha256-rCHprwik1UsFfYAMA7yVMilGlSuNqoEcramL+2aozo8=
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-aix-ppc64.tar.gz
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-aix-ppc64.tar.gz
           targets:
             - cpu: ppc64
               os: aix
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-MZ8iGtxeRP8O1X6KRBsihPArjcb8h7jrkqapNkP9gIA=
+            integrity: sha256-1ZWWHlY/yuBX1KD7mS8XWlTZf8xKFNwtR02S3e6jufg=
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-darwin-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-darwin-arm64.tar.gz
           targets:
             - cpu: arm64
               os: darwin
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-uC6kxi/QjiUMq1nWJeddd8xbCj1gxmmOvuRUXIihacU=
+            integrity: sha256-bwPBtI3b4bEppvgDi+COCJnwXxcYW00+Q1AYCrZpp/M=
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-darwin-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-darwin-x64.tar.gz
           targets:
             - cpu: x64
               os: darwin
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-myou65io6zc2EiTiodBgMArS3RQ69Y39sW3nhd8PEig=
+            integrity: sha256-D21AuUxqLra0wkD/yLn9Otp6sETBd91BPAbh75pj8IE=
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-linux-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-linux-arm64.tar.gz
           targets:
             - cpu: arm64
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-Zux5tNZPQQmu34IhCHFdC2CXEY35FZwvYyFHfaTqF6o=
+            integrity: sha256-GAEZMLGCocW0nSMmGR/bpYJwvfe0W4x9+FXvMZMbFIo=
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-linux-ppc64le.tar.gz
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-linux-ppc64le.tar.gz
           targets:
             - cpu: ppc64le
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-jclgolVdsap3/RMcJb5XG594RLyLJ454cyufWA/n1YA=
+            integrity: sha256-V0RhC2JPLoKuHKJ52OznuMpGZDcjlTPS0DNWUwO8HTk=
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-linux-s390x.tar.gz
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-linux-s390x.tar.gz
           targets:
             - cpu: s390x
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-YVkifgr318PGuy+pAEUrBKbLiEGnAqeazGEyCdcLBNA=
+            integrity: sha256-YiOq0agfnR57aCxZ0S4t4jP3tMN0dc1A0cicQrc3/6g=
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-linux-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-linux-x64.tar.gz
           targets:
             - cpu: x64
               os: linux
         - resolution:
             archive: zip
             bin: node.exe
-            integrity: sha256-sF5+Bm+BPTWtPNnCTu2u4HTAEqx+AAcSl2CP3S6UiuM=
-            prefix: node-v24.12.0-win-arm64
+            integrity: sha256-krn5sMDBI+EeSvxTXw7BnNmHRl7qUGQnVTpJlxNkFYo=
+            prefix: node-v24.13.0-win-arm64
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-win-arm64.zip
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-win-arm64.zip
           targets:
             - cpu: arm64
               os: win32
         - resolution:
             archive: zip
             bin: node.exe
-            integrity: sha256-nBJfYa6Ue1LneQlYMPnKwmeEagQ+9xkhg8hAFqqtKBI=
-            prefix: node-v24.12.0-win-x64
+            integrity: sha256-yidCaVvo3kQCfXGz9TpL2zYAm5VXX+Gub38LXOCRy4g=
+            prefix: node-v24.13.0-win-x64
             type: binary
-            url: https://nodejs.org/download/release/v24.12.0/node-v24.12.0-win-x64.zip
+            url: https://nodejs.org/download/release/v24.13.0/node-v24.13.0-win-x64.zip
           targets:
             - cpu: x64
               os: win32
-    version: 24.12.0
+    version: 24.13.0
     hasBin: true
 
   pbf@4.0.1:
@@ -1294,13 +1294,13 @@ snapshots:
     dependencies:
       '@types/geojson': 7946.0.16
 
-  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.15.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.16.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
     optionalDependencies:
-      maplibre-gl: 5.15.0
+      maplibre-gl: 5.16.0
 
   arr-union@3.1.0: {}
 
@@ -1454,7 +1454,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  maplibre-gl@5.15.0:
+  maplibre-gl@5.16.0:
     dependencies:
       '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/jsonlint-lines-primitives': 2.0.2
@@ -1486,7 +1486,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  node@runtime:24.12.0: {}
+  node@runtime:24.13.0: {}
 
   pbf@4.0.1:
     dependencies:
