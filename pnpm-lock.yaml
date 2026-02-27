@@ -26,13 +26,13 @@ importers:
         version: 19.2.3(@types/react@19.2.14)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
-        version: 8.1.0(maplibre-gl@5.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 8.1.0(maplibre-gl@5.19.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       maplibre-gl:
         specifier: ^5.2.0
-        version: 5.18.0
+        version: 5.19.0
       node:
         specifier: runtime:^24.11.0
-        version: runtime:24.13.1
+        version: runtime:24.14.0
       prettier:
         specifier: ^3.4.2
         version: 3.8.1
@@ -260,15 +260,15 @@ packages:
     resolution: {integrity: sha512-cOZZOVhDSulgK0meTsTkmNXb1ahVvmTmWmfx9gRBwc6hq98wS9JP35ESIoNq3xqEan+UN+gn8187Z6E4NKhLsw==}
     hasBin: true
 
-  '@maplibre/maplibre-gl-style-spec@24.4.1':
-    resolution: {integrity: sha512-UKhA4qv1h30XT768ccSv5NjNCX+dgfoq2qlLVmKejspPcSQTYD4SrVucgqegmYcKcmwf06wcNAa/kRd0NHWbUg==}
+  '@maplibre/maplibre-gl-style-spec@24.6.0':
+    resolution: {integrity: sha512-+lxMYE+DvInshwVrqSQ3CkW9YRwVlRXeDzfthVOa1c9pwK5d7YgCwhgFwlSmjJLvTXn4gL8EvPUGT620sk2Pzg==}
     hasBin: true
 
   '@maplibre/mlt@1.1.6':
     resolution: {integrity: sha512-rgtY3x65lrrfXycLf6/T22ZnjTg5WgIOsptOIoCaMZy4O4UAKTyZlYY0h6v8le721pTptF94U65yMDQkug+URw==}
 
-  '@maplibre/vt-pbf@4.2.1':
-    resolution: {integrity: sha512-IxZBGq/+9cqf2qdWlFuQ+ZfoMhWpxDUGQZ/poPHOJBvwMUT1GuxLo6HgYTou+xxtsOsjfbcjI8PZaPCtmt97rA==}
+  '@maplibre/vt-pbf@4.3.0':
+    resolution: {integrity: sha512-jIvp8F5hQCcreqOOpEt42TJMUlsrEcpf/kI1T2v85YrQRV6PPXUcEXUg5karKtH6oh47XJZ4kHu56pUkOuqA7w==}
 
   '@rollup/rollup-android-arm-eabi@4.55.1':
     resolution: {integrity: sha512-9R0DM/ykwfGIlNu6+2U09ga0WXeZ9MRC2Ter8jnz8415VbuIykVuc6bhdrbORFZANDmTDvq26mJrEVTl8TdnDg==}
@@ -704,8 +704,8 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  maplibre-gl@5.18.0:
-    resolution: {integrity: sha512-UtWxPBpHuFvEkM+5FVfcFG9ZKEWZQI6+PZkvLErr8Zs5ux+O7/KQ3JjSUvAfOlMeMgd/77qlHpOw0yHL7JU5cw==}
+  maplibre-gl@5.19.0:
+    resolution: {integrity: sha512-REhYUN8gNP3HlcIZS6QU2uy8iovl31cXsrNDkCcqWSQbCkcpdYLczqDz5PVIwNH42UQNyvukjes/RoHPDrOUmQ==}
     engines: {node: '>=16.14.0', npm: '>=8.1.0'}
 
   minimist@1.2.8:
@@ -719,94 +719,94 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  node@runtime:24.13.1:
+  node@runtime:24.14.0:
     resolution:
       type: variations
       variants:
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-iuBmSe6dptnq29KhoLCRw7k8eMkbam7ImQmZOrW64q4=
+            integrity: sha256-J6xI+Ux+iPSwxdkHfw/sECViicfcoh4Nn4LLqtE9bj0=
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-aix-ppc64.tar.gz
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-aix-ppc64.tar.gz
           targets:
             - cpu: ppc64
               os: aix
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-jAOdWfL+xhleQoGtWw0CualAiXtN97hJxvtIvmeHu6Y=
+            integrity: sha256-oaVPRqdQ0lI9Yo2SSqthdYpRydrT4COL6xQUG+lhXdM=
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-darwin-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-darwin-arm64.tar.gz
           targets:
             - cpu: arm64
               os: darwin
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-Un8FeNmBLn36IlEhvaCxVGpqDktfVWKV/IKZwnLeX78=
+            integrity: sha256-8oeeuBDiWZOgV45dh4kwJm/S6vz/6fKDmz2Ns1TUh54=
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-darwin-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-darwin-x64.tar.gz
           targets:
             - cpu: x64
               os: darwin
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-SHNFnXybKP6qHw+t6bucgctwJnCZH/gKUdgFMlxeNFY=
+            integrity: sha256-9EdAzSGN6BJ/HETEFRCjp0D6XJyNHNzhw77a2nnzzec=
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-linux-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-linux-arm64.tar.gz
           targets:
             - cpu: arm64
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-2oagoEtiLKvAyd6DYW6pN8HYoFqOr/iJVb3Bx+Ds7R0=
+            integrity: sha256-g7Jj+cLqlGwMShXDyupkcNxJ/gvrbzPf0pqpEoJQY3o=
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-linux-ppc64le.tar.gz
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-linux-ppc64le.tar.gz
           targets:
             - cpu: ppc64le
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-1F5eM3qNN7VX11v6pPhU8yWIwqz5df98OeT9k64h1jA=
+            integrity: sha256-j6Igofe3dpYFwukp/b9zaCKZe/TPiKPbBRiOq9dxIyg=
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-linux-s390x.tar.gz
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-linux-s390x.tar.gz
           targets:
             - cpu: s390x
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-etKPsXKpqwWT+GwaOeXCaNDY/D1ssBZ/RVtWVaem4v0=
+            integrity: sha256-2/W4Zl3sFeWeY1mlF/77R7I/25FS2N75dbm8o9/G01U=
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-linux-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-linux-x64.tar.gz
           targets:
             - cpu: x64
               os: linux
         - resolution:
             archive: zip
             bin: node.exe
-            integrity: sha256-DNKe62TzxknbLEyGh3nKJ39aTEnibGnlko0B/grgbag=
-            prefix: node-v24.13.1-win-arm64
+            integrity: sha256-iNNugQlzai+pvcWW8s9QejxSxpzfluVPis1HPsFL6FM=
+            prefix: node-v24.14.0-win-arm64
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-win-arm64.zip
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-win-arm64.zip
           targets:
             - cpu: arm64
               os: win32
         - resolution:
             archive: zip
             bin: node.exe
-            integrity: sha256-+6V3xLuH3wTVTdh7vapaInLx+Zoqy/kVLhqRuLXwsnk=
-            prefix: node-v24.13.1-win-x64
+            integrity: sha256-MT+kDA17GFdYId6MsXSDAx/gfZXeWZT29DXzs0X4XGY=
+            prefix: node-v24.14.0-win-x64
             type: binary
-            url: https://nodejs.org/download/release/v24.13.1/node-v24.13.1-win-x64.zip
+            url: https://nodejs.org/download/release/v24.14.0/node-v24.14.0-win-x64.zip
           targets:
             - cpu: x64
               os: win32
-    version: 24.13.1
+    version: 24.14.0
     hasBin: true
 
   pbf@4.0.1:
@@ -1151,7 +1151,7 @@ snapshots:
       rw: 1.3.3
       sort-object: 3.0.3
 
-  '@maplibre/maplibre-gl-style-spec@24.4.1':
+  '@maplibre/maplibre-gl-style-spec@24.6.0':
     dependencies:
       '@mapbox/jsonlint-lines-primitives': 2.0.2
       '@mapbox/unitbezier': 0.0.1
@@ -1165,7 +1165,7 @@ snapshots:
     dependencies:
       '@mapbox/point-geometry': 1.1.0
 
-  '@maplibre/vt-pbf@4.2.1':
+  '@maplibre/vt-pbf@4.3.0':
     dependencies:
       '@mapbox/point-geometry': 1.1.0
       '@mapbox/vector-tile': 2.0.4
@@ -1334,13 +1334,13 @@ snapshots:
     dependencies:
       '@types/geojson': 7946.0.16
 
-  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.19.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
     optionalDependencies:
-      maplibre-gl: 5.18.0
+      maplibre-gl: 5.19.0
 
   arr-union@3.1.0: {}
 
@@ -1492,7 +1492,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  maplibre-gl@5.18.0:
+  maplibre-gl@5.19.0:
     dependencies:
       '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/jsonlint-lines-primitives': 2.0.2
@@ -1502,9 +1502,9 @@ snapshots:
       '@mapbox/vector-tile': 2.0.4
       '@mapbox/whoots-js': 3.1.0
       '@maplibre/geojson-vt': 5.0.4
-      '@maplibre/maplibre-gl-style-spec': 24.4.1
+      '@maplibre/maplibre-gl-style-spec': 24.6.0
       '@maplibre/mlt': 1.1.6
-      '@maplibre/vt-pbf': 4.2.1
+      '@maplibre/vt-pbf': 4.3.0
       '@types/geojson': 7946.0.16
       '@types/supercluster': 7.1.3
       earcut: 3.0.2
@@ -1523,7 +1523,7 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  node@runtime:24.13.1: {}
+  node@runtime:24.14.0: {}
 
   pbf@4.0.1:
     dependencies:
