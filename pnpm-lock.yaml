@@ -26,10 +26,10 @@ importers:
         version: 19.2.3(@types/react@19.2.14)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
-        version: 8.1.0(maplibre-gl@5.19.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        version: 8.1.0(maplibre-gl@5.20.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       maplibre-gl:
         specifier: ^5.2.0
-        version: 5.19.0
+        version: 5.20.1
       node:
         specifier: runtime:^24.11.0
         version: runtime:24.14.0
@@ -229,10 +229,6 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@mapbox/geojson-rewind@0.5.2':
-    resolution: {integrity: sha512-tJaT+RbYGJYStt7wI3cq4Nl4SXxG8W7JDG5DMJu97V25RnbNg3QtQtf+KD+VLjNpWKYsRvXDNmNrBgEETr1ifA==}
-    hasBin: true
-
   '@mapbox/jsonlint-lines-primitives@2.0.2':
     resolution: {integrity: sha512-rY0o9A5ECsTQRVhv7tL/OyDpGAoUB4tTvLiW1DSzQGq4bvTPhNw1VpSNjDJc5GFZ2XuyOtSWSVN05qOtcD71qQ==}
     engines: {node: '>= 0.6'}
@@ -256,16 +252,19 @@ packages:
   '@maplibre/geojson-vt@5.0.4':
     resolution: {integrity: sha512-KGg9sma45S+stfH9vPCJk1J0lSDLWZgCT9Y8u8qWZJyjFlP8MNP1WGTxIMYJZjDvVT3PDn05kN1C95Sut1HpgQ==}
 
+  '@maplibre/geojson-vt@6.0.4':
+    resolution: {integrity: sha512-HYv3POhMRCdhP3UPPATM/hfcy6/WuVIf5FKboH8u/ZuFMTnAIcSVlq5nfOqroLokd925w2QtE7YwquFOIacwVQ==}
+
   '@maplibre/maplibre-gl-style-spec@19.3.3':
     resolution: {integrity: sha512-cOZZOVhDSulgK0meTsTkmNXb1ahVvmTmWmfx9gRBwc6hq98wS9JP35ESIoNq3xqEan+UN+gn8187Z6E4NKhLsw==}
     hasBin: true
 
-  '@maplibre/maplibre-gl-style-spec@24.6.0':
-    resolution: {integrity: sha512-+lxMYE+DvInshwVrqSQ3CkW9YRwVlRXeDzfthVOa1c9pwK5d7YgCwhgFwlSmjJLvTXn4gL8EvPUGT620sk2Pzg==}
+  '@maplibre/maplibre-gl-style-spec@24.7.0':
+    resolution: {integrity: sha512-Ed7rcKYU5iELfablg9Mj+TVCsXsPBgdMyXPRAxb2v7oWg9YJnpQdZ5msDs1LESu/mtXy3Z48Vdppv2t/x5kAhw==}
     hasBin: true
 
-  '@maplibre/mlt@1.1.6':
-    resolution: {integrity: sha512-rgtY3x65lrrfXycLf6/T22ZnjTg5WgIOsptOIoCaMZy4O4UAKTyZlYY0h6v8le721pTptF94U65yMDQkug+URw==}
+  '@maplibre/mlt@1.1.8':
+    resolution: {integrity: sha512-8vtfYGidr1rNkv5IwIoU2lfe3Oy+Wa8HluzQYcQi9cveU9K3pweAal/poQj4GJ0K/EW4bTQp2wVAs09g2yDRZg==}
 
   '@maplibre/vt-pbf@4.3.0':
     resolution: {integrity: sha512-jIvp8F5hQCcreqOOpEt42TJMUlsrEcpf/kI1T2v85YrQRV6PPXUcEXUg5karKtH6oh47XJZ4kHu56pUkOuqA7w==}
@@ -584,10 +583,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  get-stream@6.0.1:
-    resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
-    engines: {node: '>=10'}
-
   get-value@2.0.6:
     resolution: {integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==}
     engines: {node: '>=0.10.0'}
@@ -704,8 +699,8 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  maplibre-gl@5.19.0:
-    resolution: {integrity: sha512-REhYUN8gNP3HlcIZS6QU2uy8iovl31cXsrNDkCcqWSQbCkcpdYLczqDz5PVIwNH42UQNyvukjes/RoHPDrOUmQ==}
+  maplibre-gl@5.20.1:
+    resolution: {integrity: sha512-57YIgfRct+rrk78ldoWRuLWRnXV/1vM2Rk0QYfEDQmsXdpgbACwvGoREIOZtyDIaq/GJK/ORYEriaAdVZuNfvw==}
     engines: {node: '>=16.14.0', npm: '>=8.1.0'}
 
   minimist@1.2.8:
@@ -1119,11 +1114,6 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mapbox/geojson-rewind@0.5.2':
-    dependencies:
-      get-stream: 6.0.1
-      minimist: 1.2.8
-
   '@mapbox/jsonlint-lines-primitives@2.0.2': {}
 
   '@mapbox/point-geometry@1.1.0': {}
@@ -1142,6 +1132,10 @@ snapshots:
 
   '@maplibre/geojson-vt@5.0.4': {}
 
+  '@maplibre/geojson-vt@6.0.4':
+    dependencies:
+      kdbush: 4.0.2
+
   '@maplibre/maplibre-gl-style-spec@19.3.3':
     dependencies:
       '@mapbox/jsonlint-lines-primitives': 2.0.2
@@ -1151,7 +1145,7 @@ snapshots:
       rw: 1.3.3
       sort-object: 3.0.3
 
-  '@maplibre/maplibre-gl-style-spec@24.6.0':
+  '@maplibre/maplibre-gl-style-spec@24.7.0':
     dependencies:
       '@mapbox/jsonlint-lines-primitives': 2.0.2
       '@mapbox/unitbezier': 0.0.1
@@ -1161,7 +1155,7 @@ snapshots:
       rw: 1.3.3
       tinyqueue: 3.0.0
 
-  '@maplibre/mlt@1.1.6':
+  '@maplibre/mlt@1.1.8':
     dependencies:
       '@mapbox/point-geometry': 1.1.0
 
@@ -1334,13 +1328,13 @@ snapshots:
     dependencies:
       '@types/geojson': 7946.0.16
 
-  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.19.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@vis.gl/react-maplibre@8.1.0(maplibre-gl@5.20.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
     optionalDependencies:
-      maplibre-gl: 5.19.0
+      maplibre-gl: 5.20.1
 
   arr-union@3.1.0: {}
 
@@ -1410,8 +1404,6 @@ snapshots:
 
   fsevents@2.3.3:
     optional: true
-
-  get-stream@6.0.1: {}
 
   get-value@2.0.6: {}
 
@@ -1492,21 +1484,19 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  maplibre-gl@5.19.0:
+  maplibre-gl@5.20.1:
     dependencies:
-      '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/jsonlint-lines-primitives': 2.0.2
       '@mapbox/point-geometry': 1.1.0
       '@mapbox/tiny-sdf': 2.0.7
       '@mapbox/unitbezier': 0.0.1
       '@mapbox/vector-tile': 2.0.4
       '@mapbox/whoots-js': 3.1.0
-      '@maplibre/geojson-vt': 5.0.4
-      '@maplibre/maplibre-gl-style-spec': 24.6.0
-      '@maplibre/mlt': 1.1.6
+      '@maplibre/geojson-vt': 6.0.4
+      '@maplibre/maplibre-gl-style-spec': 24.7.0
+      '@maplibre/mlt': 1.1.8
       '@maplibre/vt-pbf': 4.3.0
       '@types/geojson': 7946.0.16
-      '@types/supercluster': 7.1.3
       earcut: 3.0.2
       gl-matrix: 3.4.4
       kdbush: 4.0.2
@@ -1514,7 +1504,6 @@ snapshots:
       pbf: 4.0.1
       potpack: 2.1.0
       quickselect: 3.0.0
-      supercluster: 8.0.1
       tinyqueue: 3.0.0
 
   minimist@1.2.8: {}
