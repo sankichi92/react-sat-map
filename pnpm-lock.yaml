@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       satellite.js:
-        specifier: ^6.0.0
-        version: 6.0.2
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@tailwindcss/vite':
         specifier: ^4.0.3
@@ -886,8 +886,8 @@ packages:
   rw@1.3.3:
     resolution: {integrity: sha512-PdhdWy89SiZogBLaw42zdeqtRJ//zFd2PgQavcICDUgJT5oW10QCRKbJ6bg4r0/UY2M6BWd5tkxuGFRvCkgfHQ==}
 
-  satellite.js@6.0.2:
-    resolution: {integrity: sha512-XWKxtqVF5xiJ1xAeiYeT/oSSzsukoCLWvk6nO/WFy4un0M3g4djAU9TAtOCqJLtYW9vxx9pkPJ1L9ITOc607GA==}
+  satellite.js@7.0.0:
+    resolution: {integrity: sha512-jrWZBytZgpzcfWpny6jsV7/StWKmie6JlDNpQ53RjbIXVDJPleQw8y+Cs/ZXaPIs720NFgQQLyvqYTbpsBTXKg==}
 
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
@@ -1567,7 +1567,7 @@ snapshots:
 
   rw@1.3.3: {}
 
-  satellite.js@6.0.2: {}
+  satellite.js@7.0.0: {}
 
   scheduler@0.27.0: {}
 
