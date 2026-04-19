@@ -16,14 +16,13 @@
     "LICENSE",
     "README.md"
   ],
-  "main": "./dist/react-sat-map.umd.cjs",
+  "main": "./dist/react-sat-map.js",
   "module": "./dist/react-sat-map.js",
   "types": "./types/lib/main.d.ts",
   "exports": {
     ".": {
       "types": "./types/lib/main.d.ts",
-      "import": "./dist/react-sat-map.js",
-      "require": "./dist/react-sat-map.umd.cjs"
+      "import": "./dist/react-sat-map.js"
     },
     "./style.css": "./dist/react-sat-map.css"
   },

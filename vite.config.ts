@@ -3,9 +3,13 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [tailwindcss()],
+  worker: {
+    format: "es",
+  },
   build: {
     lib: {
       entry: "./lib/main.ts",
+      formats: ["es"],
       name: "react-sat-map",
     },
     rollupOptions: {
