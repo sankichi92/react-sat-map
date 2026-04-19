@@ -26,7 +26,7 @@ importers:
         version: 19.2.3(@types/react@19.2.14)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
-        version: 8.1.1(maplibre-gl@5.23.0)(react-dom@19.2.4(react@19.2.5))(react@19.2.5)
+        version: 8.1.1(maplibre-gl@5.23.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       maplibre-gl:
         specifier: ^5.2.0
         version: 5.23.0
@@ -40,11 +40,11 @@ importers:
         specifier: ^0.7.1
         version: 0.7.2(prettier@3.8.2)
       react:
-        specifier: ^19.0.0
+        specifier: ^19.2.5
         version: 19.2.5
       react-dom:
-        specifier: ^19.0.0
-        version: 19.2.4(react@19.2.5)
+        specifier: ^19.2.5
+        version: 19.2.5(react@19.2.5)
       tailwindcss:
         specifier: ^4.0.3
         version: 4.2.2
@@ -866,10 +866,10 @@ packages:
   quickselect@3.0.0:
     resolution: {integrity: sha512-XdjUArbK4Bm5fLLvlm5KpTFOiOThgfWWI4axAZDWg4E/0mKdZyI9tNEfds27qCi1ze/vwTR16kvmmGhRra3c2g==}
 
-  react-dom@19.2.4:
-    resolution: {integrity: sha512-AXJdLo8kgMbimY95O2aKQqsz2iWi9jMgKJhRBAxECE4IFxfcazB2LmzloIoibJI3C12IlY20+KFaLv+71bUJeQ==}
+  react-dom@19.2.5:
+    resolution: {integrity: sha512-J5bAZz+DXMMwW/wV3xzKke59Af6CHY7G4uYLN1OvBcKEsWOs4pQExj86BBKamxl/Ik5bx9whOrvBlSDfWzgSag==}
     peerDependencies:
-      react: ^19.2.4
+      react: ^19.2.5
 
   react@19.2.5:
     resolution: {integrity: sha512-llUJLzz1zTUBrskt2pwZgLq59AemifIftw4aB7JxOqf1HY2FDaGDxgwpAPVzHU1kdWabH7FauP4i1oEeer2WCA==}
@@ -1316,11 +1316,11 @@ snapshots:
     dependencies:
       '@types/geojson': 7946.0.16
 
-  '@vis.gl/react-maplibre@8.1.1(maplibre-gl@5.23.0)(react-dom@19.2.4(react@19.2.5))(react@19.2.5)':
+  '@vis.gl/react-maplibre@8.1.1(maplibre-gl@5.23.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
       react: 19.2.5
-      react-dom: 19.2.4(react@19.2.5)
+      react-dom: 19.2.5(react@19.2.5)
     optionalDependencies:
       maplibre-gl: 5.23.0
 
@@ -1529,7 +1529,7 @@ snapshots:
 
   quickselect@3.0.0: {}
 
-  react-dom@19.2.4(react@19.2.5):
+  react-dom@19.2.5(react@19.2.5):
     dependencies:
       react: 19.2.5
       scheduler: 0.27.0
