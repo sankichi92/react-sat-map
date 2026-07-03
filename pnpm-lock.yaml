@@ -35,10 +35,10 @@ importers:
         version: runtime:24.15.0
       prettier:
         specifier: ^3.4.2
-        version: 3.8.4
+        version: 3.9.4
       prettier-plugin-tailwindcss:
         specifier: ^0.8.0
-        version: 0.8.0(prettier@3.8.4)
+        version: 0.8.0(prettier@3.9.4)
       react:
         specifier: ^19.2.5
         version: 19.2.7
@@ -694,8 +694,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.8.4:
-    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+  prettier@3.9.4:
+    resolution: {integrity: sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1245,11 +1245,11 @@ snapshots:
 
   potpack@2.1.0: {}
 
-  prettier-plugin-tailwindcss@0.8.0(prettier@3.8.4):
+  prettier-plugin-tailwindcss@0.8.0(prettier@3.9.4):
     dependencies:
-      prettier: 3.8.4
+      prettier: 3.9.4
 
-  prettier@3.8.4: {}
+  prettier@3.9.4: {}
 
   protocol-buffers-schema@3.6.1: {}
 
