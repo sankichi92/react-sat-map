@@ -26,7 +26,7 @@ importers:
         version: 19.2.3(@types/react@19.2.17)
       '@vis.gl/react-maplibre':
         specifier: ^8.0.1
-        version: 8.1.1(maplibre-gl@5.24.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        version: 8.1.1(maplibre-gl@5.24.0)(react-dom@19.2.7(react@19.2.8))(react@19.2.8)
       maplibre-gl:
         specifier: ^5.2.0
         version: 5.24.0
@@ -41,10 +41,10 @@ importers:
         version: 0.8.0(prettier@3.9.5)
       react:
         specifier: ^19.2.5
-        version: 19.2.7
+        version: 19.2.8
       react-dom:
         specifier: ^19.2.5
-        version: 19.2.7(react@19.2.7)
+        version: 19.2.7(react@19.2.8)
       tailwindcss:
         specifier: ^4.0.3
         version: 4.3.2
@@ -830,8 +830,8 @@ packages:
     peerDependencies:
       react: ^19.2.7
 
-  react@19.2.7:
-    resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
+  react@19.2.8:
+    resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
 
   resolve-protobuf-schema@2.1.0:
@@ -1252,11 +1252,11 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@vis.gl/react-maplibre@8.1.1(maplibre-gl@5.24.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@vis.gl/react-maplibre@8.1.1(maplibre-gl@5.24.0)(react-dom@19.2.7(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
-      react: 19.2.7
-      react-dom: 19.2.7(react@19.2.7)
+      react: 19.2.8
+      react-dom: 19.2.7(react@19.2.8)
     optionalDependencies:
       maplibre-gl: 5.24.0
 
@@ -1435,12 +1435,12 @@ snapshots:
 
   quickselect@3.0.0: {}
 
-  react-dom@19.2.7(react@19.2.7):
+  react-dom@19.2.7(react@19.2.8):
     dependencies:
-      react: 19.2.7
+      react: 19.2.8
       scheduler: 0.27.0
 
-  react@19.2.7: {}
+  react@19.2.8: {}
 
   resolve-protobuf-schema@2.1.0:
     dependencies:
